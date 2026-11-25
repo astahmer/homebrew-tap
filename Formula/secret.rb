@@ -5,8 +5,13 @@ class Secret < Formula
   license "MIT"
 
   on_macos do
-    url "https://github.com/astahmer/secret-cli/releases/download/v2.1.1/secret-2.1.1-universal.tar.gz"
-    sha256 "0f24fadd675f52cfdaf6e9d1288f475a9249e250c7194172123abe0a5ce01268"
+    if Hardware::CPU.arm?
+      url "https://github.com/astahmer/secret-cli/releases/download/v2.1.1/secret-2.1.1-arm64.tar.gz"
+      sha256 "75727cb35012b897cf25ae99796a3759ade0d1f0171f4b015007b004d102b91a"
+    else
+      url "https://github.com/astahmer/secret-cli/releases/download/v2.1.1/secret-2.1.1-arm64.tar.gz"
+      sha256 "75727cb35012b897cf25ae99796a3759ade0d1f0171f4b015007b004d102b91a"
+    end
   end
 
   def install
