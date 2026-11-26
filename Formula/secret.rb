@@ -1,21 +1,21 @@
 class Secret < Formula
   desc "Value-minimizing secret manager for configured aliases"
   homepage "https://github.com/astahmer/secret-cli"
-  version "2.3.0"
+  version "2.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/astahmer/secret-cli/releases/download/v2.3.0/secret-2.3.0-universal.tar.gz"
-      sha256 "f8e8aa35c2886c35b0a30b23c6b0e101d71453ee9a958cf0eaac7c9c5d08b680"
+      url "https://github.com/astahmer/secret-cli/releases/download/v2.3.1/secret-2.3.1-universal.tar.gz"
+      sha256 "761f5b2cc0c282610bccd522a2a2b00f023dbcd847155292556c701c2251062a"
     else
-      url "https://github.com/astahmer/secret-cli/releases/download/v2.3.0/secret-2.3.0-universal.tar.gz"
-      sha256 "f8e8aa35c2886c35b0a30b23c6b0e101d71453ee9a958cf0eaac7c9c5d08b680"
+      url "https://github.com/astahmer/secret-cli/releases/download/v2.3.1/secret-2.3.1-universal.tar.gz"
+      sha256 "761f5b2cc0c282610bccd522a2a2b00f023dbcd847155292556c701c2251062a"
     end
   end
 
   def install
-    bin.install "secret-2.3.0-universal/secret" => "secret"
+    bin.install "secret-2.3.1-universal/secret" => "secret"
   end
 
   def caveats
@@ -26,6 +26,6 @@ class Secret < Formula
   end
 
   test do
-    assert_match "secret 2.3.0", shell_output("#{bin}/secret version")
+    assert_match "secret 2.3.1", shell_output("#{bin}/secret version")
   end
 end
